@@ -1,3 +1,4 @@
+package removeduplicatesfromstring;
 
 public class CC0103 {
 
@@ -15,7 +16,7 @@ public class CC0103 {
 }
 	public static String remdup(char[] str){
 		
-		int j=1,found;
+		int j=0,found;
 		for (int i=1;i<str.length;i++){
 			found=0;
 			for(int x=i-1;x>=0&&found==0;x--)
@@ -28,22 +29,14 @@ public class CC0103 {
 				
 			}
 			if (found==0) {
-			//	System.out.println(str[j] + "," + str[i]);
 				str[j]=str[i];
 				j=j+1;
 			}
 		}
-		//return str.toString();
-		//for (int v=j+1;v<str.length;v++){
-		str[j]=0;
-	//	}
-		
-		for(int k=0;k<j;k++){
-			System.out.print(str[k]);
-		}
-		
-		System.out.print(str.toString());
-		return str.toString();
+	
+		String out=new String(str,0,j);
+		System.out.println(out);
+		return out;
 		
 	}
 }
